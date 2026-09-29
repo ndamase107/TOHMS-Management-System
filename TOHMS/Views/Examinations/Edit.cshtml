@@ -1,0 +1,156 @@
+﻿@model TOHMS.Models.Examination
+
+@{
+    ViewData["Title"] = "Edit Examination";
+}
+
+<div class="container mt-4">
+
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+
+            <div class="card shadow-sm">
+
+                <div class="card-header bg-white">
+                    <h3>Edit Medical Examination</h3>
+                </div>
+
+                <div class="card-body">
+
+                    <form asp-action="Edit"
+                          asp-route-id="@Model.ExaminationId"
+                          method="post">
+
+                        <input asp-for="ExaminationId" type="hidden" />
+
+                        <div asp-validation-summary="ModelOnly"
+                             class="text-danger mb-3">
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label class="form-label">Employee</label>
+
+                            <select asp-for="EmployeeId"
+                                    asp-items="ViewBag.Employees"
+                                    class="form-select">
+                            </select>
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label asp-for="ExaminationType"
+                                   class="form-label">
+                                Examination Type
+                            </label>
+
+                            <select asp-for="ExaminationType"
+                                    class="form-select">
+
+                                <option>Pre-Employment Medical</option>
+                                <option>Periodic Medical Examination</option>
+                                <option>Exit Medical Examination</option>
+                                <option>Fitness for Duty Assessment</option>
+                                <option>Return to Work Assessment</option>
+                                <option>Audiometry</option>
+                                <option>Spirometry</option>
+                                <option>Vision Screening</option>
+                                <option>Medical Surveillance</option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label asp-for="ExaminationDate"
+                                   class="form-label">
+                                Examination Date
+                            </label>
+
+                            <input asp-for="ExaminationDate"
+                                   type="date"
+                                   class="form-control" />
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label asp-for="FitnessStatus"
+                                   class="form-label">
+                                Fitness Status
+                            </label>
+
+                            <select asp-for="FitnessStatus"
+                                    class="form-select">
+
+                                <option value="Pending">Pending</option>
+                                <option value="Fit">Fit</option>
+                                <option value="Fit with Restrictions">
+                                    Fit with Restrictions
+                                </option>
+                                <option value="Temporarily Unfit">
+                                    Temporarily Unfit
+                                </option>
+                                <option value="Unfit">Unfit</option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label asp-for="Findings"
+                                   class="form-label">
+                                Clinical Findings
+                            </label>
+
+                            <textarea asp-for="Findings"
+                                      class="form-control"
+                                      rows="4">
+                            </textarea>
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label asp-for="Recommendations"
+                                   class="form-label">
+                                Recommendations
+                            </label>
+
+                            <textarea asp-for="Recommendations"
+                                      class="form-control"
+                                      rows="4">
+                            </textarea>
+
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+
+                            <a asp-action="Index"
+                               class="btn btn-outline-secondary">
+                                Cancel
+                            </a>
+
+                            <button type="submit"
+                                    class="btn btn-primary">
+                                Save Changes
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

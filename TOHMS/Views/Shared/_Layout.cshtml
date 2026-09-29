@@ -1,0 +1,296 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>@ViewData["Title"] - TOHMS</title>
+
+    <link rel="stylesheet"
+          href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+    <link rel="stylesheet"
+          href="~/css/site.css"
+          asp-append-version="true" />
+</head>
+
+<body>
+
+    <a class="skip-link" href="#main-content">
+        Skip to main content
+    </a>
+
+    <header>
+        <nav class="navbar navbar-expand-xl tohms-navbar">
+            <div class="container-fluid px-lg-4">
+
+                <a class="navbar-brand tohms-brand"
+                   asp-controller="Home"
+                   asp-action="Index"
+                   aria-label="TOHMS Dashboard">
+
+                    <span class="brand-icon">
+                        <i class="bi bi-heart-pulse-fill"></i>
+                    </span>
+
+                    <span>
+                        <span class="brand-name">TOHMS</span>
+                        <small>Thahla Occuhealth</small>
+                    </span>
+                </a>
+
+                <button class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#mainNavigation"
+                        aria-controls="mainNavigation"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse"
+                     id="mainNavigation">
+
+                    @if (User.Identity?.IsAuthenticated == true)
+                    {
+                        <ul class="navbar-nav me-auto mb-2 mb-xl-0">
+
+                            <li class="nav-item">
+                                <a class="nav-link"
+                                   asp-controller="Home"
+                                   asp-action="Index">
+                                    <i class="bi bi-grid-1x2-fill"></i>
+                                    Dashboard
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link"
+                                   asp-controller="Clients"
+                                   asp-action="Index">
+                                    <i class="bi bi-buildings"></i>
+                                    Clients
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link"
+                                   asp-controller="Employees"
+                                   asp-action="Index">
+                                    <i class="bi bi-people-fill"></i>
+                                    Employees
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link"
+                                   asp-controller="Appointments"
+                                   asp-action="Index">
+                                    <i class="bi bi-calendar-check"></i>
+                                    Appointments
+                                </a>
+                            </li>
+
+                            <li class="nav-item dropdown">
+
+                                <a class="nav-link dropdown-toggle"
+                                   href="#"
+                                   role="button"
+                                   data-bs-toggle="dropdown"
+                                   aria-expanded="false">
+
+                                    <i class="bi bi-clipboard2-pulse"></i>
+                                    Medical
+                                </a>
+
+                                <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a class="dropdown-item"
+                                           asp-controller="Examinations"
+                                           asp-action="Index">
+
+                                            <i class="bi bi-clipboard2-check"></i>
+                                            Examinations
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a class="dropdown-item"
+                                           asp-controller="HealthRecords"
+                                           asp-action="Index">
+
+                                            <i class="bi bi-file-medical"></i>
+                                            Health Records
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a class="dropdown-item"
+                                           asp-controller="Certificates"
+                                           asp-action="Index">
+
+                                            <i class="bi bi-patch-check"></i>
+                                            Certificates
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </li>
+
+                            <li class="nav-item dropdown">
+
+                                <a class="nav-link dropdown-toggle"
+                                   href="#"
+                                   role="button"
+                                   data-bs-toggle="dropdown"
+                                   aria-expanded="false">
+
+                                    <i class="bi bi-briefcase-fill"></i>
+                                    Operations
+                                </a>
+
+                                <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a class="dropdown-item"
+                                           asp-controller="Risks"
+                                           asp-action="Index">
+
+                                            <i class="bi bi-shield-exclamation"></i>
+                                            Risk Assessments
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a class="dropdown-item"
+                                           asp-controller="Services"
+                                           asp-action="Index">
+
+                                            <i class="bi bi-activity"></i>
+                                            Services
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </li>
+
+                            @if (User.IsInRole("Administrator") ||
+                                 User.IsInRole("Manager"))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link"
+                                       asp-controller="Billing"
+                                       asp-action="Index">
+
+                                        <i class="bi bi-receipt"></i>
+                                        Billing
+                                    </a>
+                                </li>
+                            }
+
+                        </ul>
+
+                        <div class="user-area">
+
+                            <div class="user-information">
+                                <span class="user-avatar">
+                                    <i class="bi bi-person-fill"></i>
+                                </span>
+
+                                <span class="user-details">
+                                    <small>Signed in as</small>
+                                    <strong>
+                                        @(User.Identity?.Name ?? "User")
+                                    </strong>
+                                </span>
+                            </div>
+
+                            <form asp-controller="Account"
+                                  asp-action="Logout"
+                                  method="post">
+
+                                <button type="submit"
+                                        class="btn logout-button"
+                                        title="Sign out">
+
+                                    <i class="bi bi-box-arrow-right"></i>
+                                    <span>Logout</span>
+                                </button>
+
+                            </form>
+
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="ms-auto">
+
+                            <a asp-controller="Account"
+                               asp-action="Login"
+                               class="btn login-nav-button">
+
+                                <i class="bi bi-box-arrow-in-right"></i>
+                                Login
+                            </a>
+
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <main id="main-content"
+          class="container-fluid tohms-main"
+          tabindex="-1">
+
+        @RenderBody()
+
+    </main>
+
+
+    <footer class="tohms-footer">
+
+        <div class="container-fluid px-lg-4">
+
+            <div class="footer-content">
+
+                <div>
+                    <strong>TOHMS</strong>
+                    <span>
+                        Thahla Occuhealth Management System
+                    </span>
+                </div>
+
+                <div>
+                    &copy; @DateTime.Now.Year Thahla Occuhealth
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="~/js/site.js"
+            asp-append-version="true"></script>
+
+    @await RenderSectionAsync(
+        "Scripts",
+        required: false)
+
+</body>
+</html>

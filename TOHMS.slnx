@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="TOHMS.Tests/TOHMS.Tests.csproj" Id="9a072565-ae3c-4793-80dd-eaa80a8e26cd" />
+  <Project Path="TOHMS/TOHMS.csproj" />
+</Solution>

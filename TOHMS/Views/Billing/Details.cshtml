@@ -1,0 +1,227 @@
+﻿@model TOHMS.Models.Invoice
+
+@{
+    ViewData["Title"] = "Invoice Details";
+}
+
+<div class="container mt-4">
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["SuccessMessage"]
+        </div>
+    }
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+        <div>
+            <h2>@Model.InvoiceNumber</h2>
+
+            <p class="text-muted mb-0">
+                Invoice Details
+            </p>
+        </div>
+
+        <div>
+
+            <a asp-action="Edit"
+               asp-route-id="@Model.InvoiceId"
+               class="btn btn-outline-secondary">
+                Edit Invoice
+            </a>
+
+            <a asp-action="AddItem"
+               asp-route-id="@Model.InvoiceId"
+               class="btn btn-primary">
+                + Add Service
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="card shadow-sm mb-4">
+
+        <div class="card-body">
+
+            <div class="row">
+
+                <div class="col-md-6">
+
+                    <h5>Bill To</h5>
+
+                    <strong>
+                        @Model.Client?.CompanyName
+                    </strong>
+
+                    <p class="text-muted">
+                        @Model.Client?.ContactPerson<br />
+                        @Model.Client?.Email<br />
+                        @Model.Client?.PhoneNumber
+                    </p>
+
+                </div>
+
+                <div class="col-md-6">
+
+                    <dl class="row">
+
+                        <dt class="col-5">Invoice Date</dt>
+                        <dd class="col-7">
+                            @Model.InvoiceDate.ToString("dd MMMM yyyy")
+                        </dd>
+
+                        <dt class="col-5">Due Date</dt>
+                        <dd class="col-7">
+                            @Model.DueDate.ToString("dd MMMM yyyy")
+                        </dd>
+
+                        <dt class="col-5">Status</dt>
+                        <dd class="col-7">
+                            @Model.Status
+                        </dd>
+
+                    </dl>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="card shadow-sm">
+
+        <div class="card-header bg-white d-flex justify-content-between">
+
+            <h5 class="mb-0">
+                Invoice Services
+            </h5>
+
+            <a asp-action="AddItem"
+               asp-route-id="@Model.InvoiceId"
+               class="btn btn-sm btn-primary">
+                + Add Service
+            </a>
+
+        </div>
+
+        <div class="card-body">
+
+            @if (!Model.InvoiceItems.Any())
+            {
+                <div class="text-center py-4">
+
+                    <p class="text-muted">
+                        No services have been added yet.
+                    </p>
+
+                    <a asp-action="AddItem"
+                       asp-route-id="@Model.InvoiceId"
+                       class="btn btn-primary">
+                        Add First Service
+                    </a>
+
+                </div>
+            }
+            else
+            {
+                <div class="table-responsive">
+
+                    <table class="table align-middle">
+
+                        <thead class="table-light">
+
+                            <tr>
+                                <th>Service</th>
+                                <th>Quantity</th>
+                                <th>Unit Price</th>
+                                <th>Total</th>
+                                <th></th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            @foreach (var item in Model.InvoiceItems)
+                            {
+                                <tr>
+
+                                    <td>
+                                        @item.Service?.ServiceName
+                                    </td>
+
+                                    <td>
+                                        @item.Quantity
+                                    </td>
+
+                                    <td>
+                                        R @item.UnitPrice.ToString("N2")
+                                    </td>
+
+                                    <td>
+                                        R @item.TotalPrice.ToString("N2")
+                                    </td>
+
+                                    <td class="text-end">
+
+                                        <form asp-action="RemoveItem"
+                                              asp-route-id="@item.InvoiceItemId"
+                                              method="post">
+
+                                            <button type="submit"
+                                                    class="btn btn-sm btn-outline-danger"
+                                                    onclick="return confirm('Remove this service from the invoice?');">
+                                                Remove
+                                            </button>
+
+                                        </form>
+
+                                    </td>
+
+                                </tr>
+                            }
+
+                        </tbody>
+
+                        <tfoot>
+
+                            <tr>
+
+                                <th colspan="3"
+                                    class="text-end">
+                                    Invoice Total:
+                                </th>
+
+                                <th>
+                                    R @Model.TotalAmount.ToString("N2")
+                                </th>
+
+                                <th></th>
+
+                            </tr>
+
+                        </tfoot>
+
+                    </table>
+
+                </div>
+            }
+
+        </div>
+
+        <div class="card-footer bg-white">
+
+            <a asp-action="Index"
+               class="btn btn-outline-secondary">
+                Back to Invoices
+            </a>
+
+        </div>
+
+    </div>
+
+</div>

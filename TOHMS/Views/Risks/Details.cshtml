@@ -1,0 +1,64 @@
+﻿@model TOHMS.Models.Risk
+
+@{
+    ViewData["Title"] = "Risk Details";
+}
+
+<div class="container mt-4">
+
+    <div class="card shadow-sm">
+
+        <div class="card-header bg-white">
+            <h3>Risk Assessment Details</h3>
+        </div>
+
+        <div class="card-body">
+
+            <dl class="row">
+
+                <dt class="col-md-3">Company</dt>
+                <dd class="col-md-9">@Model.Client?.CompanyName</dd>
+
+                <dt class="col-md-3">Hazard</dt>
+                <dd class="col-md-9">@Model.Hazard</dd>
+
+                <dt class="col-md-3">Description</dt>
+                <dd class="col-md-9">@Model.Description</dd>
+
+                <dt class="col-md-3">Risk Level</dt>
+                <dd class="col-md-9">@Model.RiskLevel</dd>
+
+                <dt class="col-md-3">Control Measures</dt>
+                <dd class="col-md-9">@Model.ControlMeasures</dd>
+
+                <dt class="col-md-3">Assessment Date</dt>
+                <dd class="col-md-9">
+                    @Model.AssessmentDate.ToString("dd MMMM yyyy")
+                </dd>
+
+                <dt class="col-md-3">Status</dt>
+                <dd class="col-md-9">
+                    @(Model.IsActive ? "Active" : "Closed")
+                </dd>
+
+            </dl>
+
+        </div>
+
+        <div class="card-footer bg-white">
+
+            <a asp-action="Index"
+               class="btn btn-outline-secondary">
+                Back
+            </a>
+
+            <a asp-action="Edit"
+               asp-route-id="@Model.RiskId"
+               class="btn btn-primary">
+                Edit
+            </a>
+
+        </div>
+
+    </div>
+</div>

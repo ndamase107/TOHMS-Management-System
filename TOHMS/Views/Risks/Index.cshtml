@@ -1,0 +1,126 @@
+﻿@model IEnumerable<TOHMS.Models.Risk>
+
+@{
+    ViewData["Title"] = "Risk Assessments";
+}
+
+<div class="container mt-4">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+        <div>
+            <h2>Risk Assessments</h2>
+            <p class="text-muted">
+                Manage workplace hazards and control measures.
+            </p>
+        </div>
+
+        <a asp-action="Create" class="btn btn-primary">
+            + Add Risk Assessment
+        </a>
+
+    </div>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["SuccessMessage"]
+        </div>
+    }
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+
+            <div class="table-responsive">
+
+                <table class="table table-hover align-middle">
+
+                    <thead class="table-light">
+                        <tr>
+                            <th>Company</th>
+                            <th>Hazard</th>
+                            <th>Risk Level</th>
+                            <th>Assessment Date</th>
+                            <th>Status</th>
+                            <th class="text-end">Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+
+                                <td>@item.Client?.CompanyName</td>
+
+                                <td>@item.Hazard</td>
+
+                                <td>
+                                    @if (item.RiskLevel == "High")
+                                    {
+                                        <span class="badge bg-danger">High</span>
+                                    }
+                                    else if (item.RiskLevel == "Medium")
+                                    {
+                                        <span class="badge bg-warning text-dark">
+                                            Medium
+                                        </span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge bg-success">
+                                            @item.RiskLevel
+                                        </span>
+                                    }
+                                </td>
+
+                                <td>
+                                    @item.AssessmentDate.ToString("dd MMM yyyy")
+                                </td>
+
+                                <td>
+                                    @if (item.IsActive)
+                                    {
+                                        <span class="badge bg-success">Active</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge bg-secondary">Closed</span>
+                                    }
+                                </td>
+
+                                <td class="text-end">
+
+                                    <a asp-action="Details"
+                                       asp-route-id="@item.RiskId"
+                                       class="btn btn-sm btn-outline-primary">
+                                        View
+                                    </a>
+
+                                    <a asp-action="Edit"
+                                       asp-route-id="@item.RiskId"
+                                       class="btn btn-sm btn-outline-secondary">
+                                        Edit
+                                    </a>
+
+                                    <a asp-action="Delete"
+                                       asp-route-id="@item.RiskId"
+                                       class="btn btn-sm btn-outline-danger">
+                                        Delete
+                                    </a>
+
+                                </td>
+
+                            </tr>
+                        }
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,260 @@
+is_global = true
+build_property.TargetFramework = net10.0
+build_property.TargetFrameworkIdentifier = .NETCoreApp
+build_property.TargetFrameworkVersion = v10.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EntryPointFilePath = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = TOHMS
+build_property.RootNamespace = TOHMS
+build_property.ProjectDir = C:\Users\emeris\source\repos\TOHMS\TOHMS\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 10.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\emeris\source\repos\TOHMS\TOHMS
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 10.0
+build_property.EnableCodeStyleSeverity = 
+
+[C:/Users/emeris/source/repos/TOHMS/TOHMS/Views/Account/AccessDenied.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxBY2Nlc3NEZW5pZWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/emeris/source/repos/TOHMS/TOHMS/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/emeris/source/repos/TOHMS/TOHMS/Views/Appointments/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwb2ludG1lbnRzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/emeris/source/repos/TOHMS/TOHMS/Views/Appointments/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwb2ludG1lbnRzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/emeris/source/repos/TOHMS/TOHMS/Views/Appointments/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwb2ludG1lbnRzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/emeris/source/repos/TOHMS/TOHMS/Views/Appointments/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwb2ludG1lbnRzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/emeris/source/repos/TOHMS/TOHMS/Views/Appointments/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwb2ludG1lbnRzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/emeris/source/repos/TOHMS/TOHMS/Views/Billing/AddItem.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmlsbGluZ1xBZGRJdGVtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/emeris/source/repos/TOHMS/TOHMS/Views/Billing/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmlsbGluZ1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/emeris/source/repos/TOHMS/TOHMS/Views/Billing/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmlsbGluZ1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/emeris/source/repos/TOHMS/TOHMS/Views/Billing/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmlsbGluZ1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/emeris/source/repos/TOHMS/TOHMS/Views/Billing/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmlsbGluZ1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/emeris/source/repos/TOHMS/TOHMS/Views/Billing/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmlsbGluZ1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/emeris/source/repos/TOHMS/TOHMS/Views/Certificates/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2VydGlmaWNhdGVzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/emeris/source/repos/TOHMS/TOHMS/Views/Certificates/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2VydGlmaWNhdGVzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/emeris/source/repos/TOHMS/TOHMS/Views/Certificates/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2VydGlmaWNhdGVzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/emeris/source/repos/TOHMS/TOHMS/Views/Certificates/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2VydGlmaWNhdGVzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/emeris/source/repos/TOHMS/TOHMS/Views/Certificates/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2VydGlmaWNhdGVzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/emeris/source/repos/TOHMS/TOHMS/Views/Clientstemp/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50c3RlbXBcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/emeris/source/repos/TOHMS/TOHMS/Views/Clientstemp/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50c3RlbXBcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/emeris/source/repos/TOHMS/TOHMS/Views/Clientstemp/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50c3RlbXBcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/emeris/source/repos/TOHMS/TOHMS/Views/Clientstemp/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50c3RlbXBcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/emeris/source/repos/TOHMS/TOHMS/Views/Clientstemp/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50c3RlbXBcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/emeris/source/repos/TOHMS/TOHMS/Views/Clients/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50c1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/emeris/source/repos/TOHMS/TOHMS/Views/Clients/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50c1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/emeris/source/repos/TOHMS/TOHMS/Views/Clients/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50c1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/emeris/source/repos/TOHMS/TOHMS/Views/Clients/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50c1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/emeris/source/repos/TOHMS/TOHMS/Views/Employees/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/emeris/source/repos/TOHMS/TOHMS/Views/Employees/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/emeris/source/repos/TOHMS/TOHMS/Views/Employees/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/emeris/source/repos/TOHMS/TOHMS/Views/Employees/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/emeris/source/repos/TOHMS/TOHMS/Views/Employees/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/emeris/source/repos/TOHMS/TOHMS/Views/Examinations/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhhbWluYXRpb25zXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/emeris/source/repos/TOHMS/TOHMS/Views/Examinations/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhhbWluYXRpb25zXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/emeris/source/repos/TOHMS/TOHMS/Views/Examinations/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhhbWluYXRpb25zXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/emeris/source/repos/TOHMS/TOHMS/Views/Examinations/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhhbWluYXRpb25zXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/emeris/source/repos/TOHMS/TOHMS/Views/Examinations/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhhbWluYXRpb25zXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/emeris/source/repos/TOHMS/TOHMS/Views/HealthRecords/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGVhbHRoUmVjb3Jkc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/emeris/source/repos/TOHMS/TOHMS/Views/HealthRecords/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGVhbHRoUmVjb3Jkc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/emeris/source/repos/TOHMS/TOHMS/Views/HealthRecords/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGVhbHRoUmVjb3Jkc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/emeris/source/repos/TOHMS/TOHMS/Views/HealthRecords/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGVhbHRoUmVjb3Jkc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/emeris/source/repos/TOHMS/TOHMS/Views/HealthRecords/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGVhbHRoUmVjb3Jkc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/emeris/source/repos/TOHMS/TOHMS/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/emeris/source/repos/TOHMS/TOHMS/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/emeris/source/repos/TOHMS/TOHMS/Views/Risks/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmlza3NcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/emeris/source/repos/TOHMS/TOHMS/Views/Risks/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmlza3NcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/emeris/source/repos/TOHMS/TOHMS/Views/Risks/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmlza3NcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/emeris/source/repos/TOHMS/TOHMS/Views/Risks/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmlza3NcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/emeris/source/repos/TOHMS/TOHMS/Views/Risks/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmlza3NcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/emeris/source/repos/TOHMS/TOHMS/Views/Services/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/emeris/source/repos/TOHMS/TOHMS/Views/Services/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/emeris/source/repos/TOHMS/TOHMS/Views/Services/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/emeris/source/repos/TOHMS/TOHMS/Views/Services/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/emeris/source/repos/TOHMS/TOHMS/Views/Services/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/emeris/source/repos/TOHMS/TOHMS/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/emeris/source/repos/TOHMS/TOHMS/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/emeris/source/repos/TOHMS/TOHMS/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/emeris/source/repos/TOHMS/TOHMS/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/emeris/source/repos/TOHMS/TOHMS/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-1ynu9v4skm

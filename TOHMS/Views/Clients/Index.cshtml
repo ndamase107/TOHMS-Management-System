@@ -1,0 +1,116 @@
+﻿@model IEnumerable<TOHMS.Models.Client>
+
+@{
+    ViewData["Title"] = "Clients";
+}
+
+<div class="page-header">
+    <div>
+        <h1>Clients</h1>
+        <p>Manage organisations registered with Thahla Occuhealth.</p>
+    </div>
+
+    <a asp-action="Create" class="btn btn-primary">
+        + Add Client
+    </a>
+</div>
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
+
+<div class="table-container">
+
+    <table class="table">
+
+        <thead>
+            <tr>
+                <th>Company</th>
+                <th>Contact Person</th>
+                <th>Phone</th>
+                <th>Industry</th>
+                <th>Status</th>
+                <th></th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            @foreach (var client in Model)
+            {
+                <tr>
+                    <td>
+                        <strong>@client.CompanyName</strong>
+                    </td>
+
+                    <td>
+                        @client.ContactPerson
+                    </td>
+
+                    <td>
+                        @client.PhoneNumber
+                    </td>
+
+                    <td>
+                        @client.Industry
+                    </td>
+
+                    <td>
+                        @if (client.IsActive)
+                        {
+                            <span class="status-active">
+                                Active
+                            </span>
+                        }
+                        else
+                        {
+                            <span class="status-inactive">
+                                Inactive
+                            </span>
+                        }
+                    </td>
+
+                    <td class="actions">
+
+                        <a asp-action="Details"
+                           asp-route-id="@client.ClientId"
+                           class="btn btn-sm btn-secondary">
+                            View
+                        </a>
+
+                        <a asp-action="Edit"
+                           asp-route-id="@client.ClientId"
+                           class="btn btn-sm btn-secondary">
+                            Edit
+                        </a>
+
+                        @if (client.IsActive)
+                        {
+                            <form asp-action="Delete"
+                                  asp-route-id="@client.ClientId"
+                                  method="post"
+                                  style="display:inline">
+
+                                @Html.AntiForgeryToken()
+
+                                <button type="submit"
+                                        class="btn btn-sm btn-danger"
+                                        onclick="return confirm('Deactivate this client?');">
+                                    Deactivate
+                                </button>
+
+                            </form>
+                        }
+
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+
+    </table>
+
+</div>

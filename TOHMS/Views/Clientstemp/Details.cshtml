@@ -1,0 +1,97 @@
+﻿@model TOHMS.Models.Client
+
+@{
+    ViewData["Title"] = "Client Details";
+}
+
+<div class="container mt-4">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h1>@Model.CompanyName</h1>
+            <p class="text-muted">Client Details</p>
+        </div>
+
+        <div>
+            <a asp-action="Edit"
+               asp-route-id="@Model.ClientId"
+               class="btn btn-primary">
+                Edit Client
+            </a>
+
+            <a asp-action="Index"
+               class="btn btn-secondary">
+                Back
+            </a>
+        </div>
+    </div>
+
+    <div class="card shadow-sm">
+
+        <div class="card-body">
+
+            <div class="row">
+
+                <div class="col-md-6 mb-3">
+                    <strong>Company Name</strong>
+                    <p>@Model.CompanyName</p>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <strong>Contact Person</strong>
+                    <p>@Model.ContactPerson</p>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <strong>Phone</strong>
+                    <p>@Model.PhoneNumber</p>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <strong>Email</strong>
+                    <p>@Model.Email</p>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <strong>Industry</strong>
+                    <p>@Model.Industry</p>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <strong>Status</strong>
+
+                    @if (Model.IsActive)
+                    {
+                        <p>
+                            <span class="badge bg-success">
+                                Active
+                            </span>
+                        </p>
+                    }
+                    else
+                    {
+                        <p>
+                            <span class="badge bg-secondary">
+                                Inactive
+                            </span>
+                        </p>
+                    }
+                </div>
+
+                <div class="col-12 mb-3">
+                    <strong>Address</strong>
+                    <p>@Model.Address</p>
+                </div>
+
+                <div class="col-12">
+                    <strong>Created</strong>
+                    <p>@Model.CreatedDate.ToLocalTime()</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

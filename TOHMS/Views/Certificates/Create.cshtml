@@ -1,0 +1,140 @@
+﻿@model TOHMS.Models.Certificate
+
+@{
+    ViewData["Title"] = "Issue Certificate";
+}
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+
+            <div class="card shadow-sm">
+
+                <div class="card-header bg-white">
+                    <h3>Issue Medical Certificate</h3>
+                </div>
+
+                <div class="card-body">
+
+                    <form asp-action="Create" method="post">
+
+                        <div asp-validation-summary="ModelOnly"
+                             class="text-danger mb-3"></div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Employee</label>
+
+                            <select asp-for="EmployeeId"
+                                    asp-items="ViewBag.Employees"
+                                    class="form-select">
+                                <option value="">
+                                    -- Select Employee --
+                                </option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="CertificateNumber"
+                                   class="form-label">
+                                Certificate Number
+                            </label>
+
+                            <input asp-for="CertificateNumber"
+                                   class="form-control"
+                                   placeholder="e.g. TOHMS-2026-001" />
+
+                            <span asp-validation-for="CertificateNumber"
+                                  class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="CertificateType"
+                                   class="form-label">
+                                Certificate Type
+                            </label>
+
+                            <select asp-for="CertificateType"
+                                    class="form-select">
+
+                                <option value="">
+                                    -- Select Certificate Type --
+                                </option>
+
+                                <option>Certificate of Fitness</option>
+                                <option>Medical Fitness Certificate</option>
+                                <option>Return to Work Certificate</option>
+                                <option>Restricted Duty Certificate</option>
+                                <option>Occupational Health Certificate</option>
+
+                            </select>
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="IssueDate"
+                                       class="form-label">
+                                    Issue Date
+                                </label>
+
+                                <input asp-for="IssueDate"
+                                       type="date"
+                                       class="form-control" />
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="ExpiryDate"
+                                       class="form-label">
+                                    Expiry Date
+                                </label>
+
+                                <input asp-for="ExpiryDate"
+                                       type="date"
+                                       class="form-control" />
+                            </div>
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label asp-for="Status"
+                                   class="form-label">
+                                Status
+                            </label>
+
+                            <select asp-for="Status"
+                                    class="form-select">
+                                <option value="Active">Active</option>
+                                <option value="Expired">Expired</option>
+                                <option value="Suspended">Suspended</option>
+                                <option value="Revoked">Revoked</option>
+                            </select>
+
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+
+                            <a asp-action="Index"
+                               class="btn btn-outline-secondary">
+                                Cancel
+                            </a>
+
+                            <button type="submit"
+                                    class="btn btn-primary">
+                                Issue Certificate
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

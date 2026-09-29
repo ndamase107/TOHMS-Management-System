@@ -1,0 +1,88 @@
+﻿@model TOHMS.Models.Appointment
+
+@{
+    ViewData["Title"] = "Appointment Details";
+}
+
+<div class="container mt-4">
+
+    <div class="row justify-content-center">
+
+        <div class="col-lg-8">
+
+            <div class="card shadow-sm">
+
+                <div class="card-header bg-white">
+                    <h3 class="mb-0">
+                        Appointment Details
+                    </h3>
+                </div>
+
+                <div class="card-body">
+
+                    <dl class="row">
+
+                        <dt class="col-sm-4">Employee</dt>
+                        <dd class="col-sm-8">
+                            @Model.Employee?.FirstName
+                            @Model.Employee?.LastName
+                        </dd>
+
+                        <dt class="col-sm-4">Employee Number</dt>
+                        <dd class="col-sm-8">
+                            @Model.Employee?.EmployeeNumber
+                        </dd>
+
+                        <dt class="col-sm-4">Company</dt>
+                        <dd class="col-sm-8">
+                            @Model.Employee?.Client?.CompanyName
+                        </dd>
+
+                        <dt class="col-sm-4">Appointment Type</dt>
+                        <dd class="col-sm-8">
+                            @Model.AppointmentType
+                        </dd>
+
+                        <dt class="col-sm-4">Date & Time</dt>
+                        <dd class="col-sm-8">
+                            @Model.AppointmentDate.ToString("dd MMMM yyyy HH:mm")
+                        </dd>
+
+                        <dt class="col-sm-4">Status</dt>
+                        <dd class="col-sm-8">
+                            @Model.Status
+                        </dd>
+
+                        <dt class="col-sm-4">Notes</dt>
+                        <dd class="col-sm-8">
+                            @(string.IsNullOrWhiteSpace(Model.Notes)
+                                ? "No notes recorded."
+                                : Model.Notes)
+                        </dd>
+
+                    </dl>
+
+                </div>
+
+                <div class="card-footer bg-white">
+
+                    <a asp-action="Index"
+                       class="btn btn-outline-secondary">
+                        Back
+                    </a>
+
+                    <a asp-action="Edit"
+                       asp-route-id="@Model.AppointmentId"
+                       class="btn btn-primary">
+                        Edit Appointment
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

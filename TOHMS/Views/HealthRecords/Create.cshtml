@@ -1,0 +1,141 @@
+﻿@model TOHMS.Models.HealthRecord
+
+@{
+    ViewData["Title"] = "Add Health Record";
+}
+
+<div class="container mt-4">
+
+    <div class="row justify-content-center">
+
+        <div class="col-lg-8">
+
+            <div class="card shadow-sm">
+
+                <div class="card-header bg-white">
+                    <h3>Add Health Record</h3>
+                </div>
+
+                <div class="card-body">
+
+                    <form asp-action="Create" method="post">
+
+                        <div asp-validation-summary="ModelOnly"
+                             class="text-danger">
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Employee
+                            </label>
+
+                            <select asp-for="EmployeeId"
+                                    asp-items="ViewBag.Employees"
+                                    class="form-select">
+
+                                <option value="">
+                                    -- Select Employee --
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label asp-for="RecordDate"
+                                   class="form-label">
+                                Record Date
+                            </label>
+
+                            <input asp-for="RecordDate"
+                                   type="date"
+                                   class="form-control" />
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label asp-for="RecordType"
+                                   class="form-label">
+                                Record Type
+                            </label>
+
+                            <select asp-for="RecordType"
+                                    class="form-select">
+
+                                <option value="">
+                                    -- Select Record Type --
+                                </option>
+
+                                <option>Medical History</option>
+                                <option>Occupational Health Assessment</option>
+                                <option>Medical Surveillance</option>
+                                <option>Exposure Record</option>
+                                <option>Injury / Incident Record</option>
+                                <option>Return to Work Record</option>
+                                <option>Follow-Up Consultation</option>
+                                <option>General Medical Record</option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label asp-for="Notes"
+                                   class="form-label">
+                                Clinical Notes
+                            </label>
+
+                            <textarea asp-for="Notes"
+                                      class="form-control"
+                                      rows="5">
+                            </textarea>
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label asp-for="Recommendations"
+                                   class="form-label">
+                                Recommendations
+                            </label>
+
+                            <textarea asp-for="Recommendations"
+                                      class="form-control"
+                                      rows="4">
+                            </textarea>
+
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+
+                            <a asp-action="Index"
+                               class="btn btn-outline-secondary">
+                                Cancel
+                            </a>
+
+                            <button type="submit"
+                                    class="btn btn-primary">
+                                Save Health Record
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

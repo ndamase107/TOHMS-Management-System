@@ -1,0 +1,142 @@
+﻿@model TOHMS.Models.Client
+
+@{
+    ViewData["Title"] = "Add Client";
+}
+
+<div class="container mt-4">
+
+    <div class="mb-4">
+        <h1>Add Client</h1>
+        <p class="text-muted">
+            Register a new client company with Thahla Occuhealth.
+        </p>
+    </div>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+
+            <form asp-action="Create" method="post">
+
+                <div asp-validation-summary="ModelOnly"
+                     class="text-danger mb-3">
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="CompanyName"
+                               class="form-label">
+                            Company Name
+                        </label>
+
+                        <input asp-for="CompanyName"
+                               class="form-control"
+                               placeholder="Enter company name" />
+
+                        <span asp-validation-for="CompanyName"
+                              class="text-danger">
+                        </span>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="ContactPerson"
+                               class="form-label">
+                            Contact Person
+                        </label>
+
+                        <input asp-for="ContactPerson"
+                               class="form-control"
+                               placeholder="Enter contact person" />
+
+                        <span asp-validation-for="ContactPerson"
+                              class="text-danger">
+                        </span>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="PhoneNumber"
+                               class="form-label">
+                            Phone Number
+                        </label>
+
+                        <input asp-for="PhoneNumber"
+                               class="form-control"
+                               placeholder="Enter phone number" />
+
+                        <span asp-validation-for="PhoneNumber"
+                              class="text-danger">
+                        </span>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="Email"
+                               class="form-label">
+                            Email
+                        </label>
+
+                        <input asp-for="Email"
+                               class="form-control"
+                               placeholder="company@example.com" />
+
+                        <span asp-validation-for="Email"
+                              class="text-danger">
+                        </span>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="Industry"
+                               class="form-label">
+                            Industry
+                        </label>
+
+                        <input asp-for="Industry"
+                               class="form-control"
+                               placeholder="e.g. Manufacturing" />
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="Address"
+                               class="form-label">
+                            Address
+                        </label>
+
+                        <input asp-for="Address"
+                               class="form-control"
+                               placeholder="Company address" />
+                    </div>
+
+                </div>
+
+                <div class="form-check mb-4">
+                    <input asp-for="IsActive"
+                           class="form-check-input" />
+
+                    <label asp-for="IsActive"
+                           class="form-check-label">
+                        Active Client
+                    </label>
+                </div>
+
+                <button type="submit"
+                        class="btn btn-primary">
+                    Save Client
+                </button>
+
+                <a asp-action="Index"
+                   class="btn btn-secondary">
+                    Cancel
+                </a>
+
+            </form>
+
+        </div>
+    </div>
+
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

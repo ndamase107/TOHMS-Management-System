@@ -1,0 +1,149 @@
+﻿@model IEnumerable<TOHMS.Models.Appointment>
+
+@{
+    ViewData["Title"] = "Appointments";
+}
+
+<div class="container mt-4">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h2>Appointments</h2>
+            <p class="text-muted mb-0">
+                Manage occupational health appointments.
+            </p>
+        </div>
+
+        <a asp-action="Create"
+           class="btn btn-primary">
+            + Schedule Appointment
+        </a>
+    </div>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show">
+            @TempData["SuccessMessage"]
+
+            <button type="button"
+                    class="btn-close"
+                    data-bs-dismiss="alert">
+            </button>
+        </div>
+    }
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+
+            @if (!Model.Any())
+            {
+                <div class="text-center py-5">
+                    <h5>No appointments found</h5>
+
+                    <p class="text-muted">
+                        Schedule the first appointment to get started.
+                    </p>
+
+                    <a asp-action="Create"
+                       class="btn btn-primary">
+                        Schedule Appointment
+                    </a>
+                </div>
+            }
+            else
+            {
+                <div class="table-responsive">
+
+                    <table class="table table-hover align-middle">
+
+                        <thead class="table-light">
+                            <tr>
+                                <th>Date</th>
+                                <th>Employee</th>
+                                <th>Company</th>
+                                <th>Type</th>
+                                <th>Status</th>
+                                <th class="text-end">Actions</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+
+                                    <td>
+                                        @item.AppointmentDate.ToString("dd MMM yyyy HH:mm")
+                                    </td>
+
+                                    <td>
+                                        @item.Employee?.FirstName
+                                        @item.Employee?.LastName
+                                    </td>
+
+                                    <td>
+                                        @item.Employee?.Client?.CompanyName
+                                    </td>
+
+                                    <td>
+                                        @item.AppointmentType
+                                    </td>
+
+                                    <td>
+                                        @if (item.Status == "Completed")
+                                        {
+                                            <span class="badge bg-success">
+                                                Completed
+                                            </span>
+                                        }
+                                        else if (item.Status == "Cancelled")
+                                        {
+                                            <span class="badge bg-danger">
+                                                Cancelled
+                                            </span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge bg-primary">
+                                                @item.Status
+                                            </span>
+                                        }
+                                    </td>
+
+                                    <td class="text-end">
+
+                                        <a asp-action="Details"
+                                           asp-route-id="@item.AppointmentId"
+                                           class="btn btn-sm btn-outline-primary">
+                                            View
+                                        </a>
+
+                                        <a asp-action="Edit"
+                                           asp-route-id="@item.AppointmentId"
+                                           class="btn btn-sm btn-outline-secondary">
+                                            Edit
+                                        </a>
+
+                                        <a asp-action="Delete"
+                                           asp-route-id="@item.AppointmentId"
+                                           class="btn btn-sm btn-outline-danger">
+                                            Delete
+                                        </a>
+
+                                    </td>
+
+                                </tr>
+                            }
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+            }
+
+        </div>
+    </div>
+
+</div>

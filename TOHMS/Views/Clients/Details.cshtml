@@ -1,0 +1,115 @@
+﻿@model TOHMS.Models.Client
+
+@{
+    ViewData["Title"] = "Client Details";
+}
+
+<div class="page-header">
+
+    <div>
+        <h1>@Model.CompanyName</h1>
+        <p>Client profile and employee information.</p>
+    </div>
+
+    <div>
+        <a asp-action="Edit"
+           asp-route-id="@Model.ClientId"
+           class="btn btn-primary">
+            Edit Client
+        </a>
+
+        <a asp-action="Index"
+           class="btn btn-secondary">
+            Back
+        </a>
+    </div>
+
+</div>
+
+<div class="details-card">
+
+    <div class="detail-row">
+        <strong>Company</strong>
+        <span>@Model.CompanyName</span>
+    </div>
+
+    <div class="detail-row">
+        <strong>Contact Person</strong>
+        <span>@Model.ContactPerson</span>
+    </div>
+
+    <div class="detail-row">
+        <strong>Phone</strong>
+        <span>@Model.PhoneNumber</span>
+    </div>
+
+    <div class="detail-row">
+        <strong>Email</strong>
+        <span>@Model.Email</span>
+    </div>
+
+    <div class="detail-row">
+        <strong>Industry</strong>
+        <span>@Model.Industry</span>
+    </div>
+
+    <div class="detail-row">
+        <strong>Address</strong>
+        <span>@Model.Address</span>
+    </div>
+
+    <div class="detail-row">
+        <strong>Status</strong>
+
+        @if (Model.IsActive)
+        {
+            <span class="status-active">Active</span>
+        }
+        else
+        {
+            <span class="status-inactive">Inactive</span>
+        }
+    </div>
+
+</div>
+
+<div class="section-header">
+    <h2>Employees</h2>
+</div>
+
+<div class="table-container">
+
+    <table class="table">
+
+        <thead>
+            <tr>
+                <th>Employee Number</th>
+                <th>Name</th>
+                <th>Job Title</th>
+                <th>Department</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            @foreach (var employee in Model.Employees)
+            {
+                <tr>
+                    <td>@employee.EmployeeNumber</td>
+
+                    <td>
+                        @employee.FirstName
+                        @employee.LastName
+                    </td>
+
+                    <td>@employee.JobTitle</td>
+
+                    <td>@employee.Department</td>
+                </tr>
+            }
+
+        </tbody>
+
+    </table>
+
+</div>

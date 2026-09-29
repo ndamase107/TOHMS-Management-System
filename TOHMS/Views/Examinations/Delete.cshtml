@@ -1,0 +1,66 @@
+﻿@model TOHMS.Models.Examination
+
+@{
+    ViewData["Title"] = "Delete Examination";
+}
+
+<div class="container mt-4">
+
+    <div class="card border-danger shadow-sm">
+
+        <div class="card-header bg-danger text-white">
+            <h3>Delete Examination</h3>
+        </div>
+
+        <div class="card-body">
+
+            <div class="alert alert-warning">
+                Are you sure you want to permanently delete this examination?
+            </div>
+
+            <p>
+                <strong>Employee:</strong>
+                @Model.Employee?.FirstName @Model.Employee?.LastName
+            </p>
+
+            <p>
+                <strong>Company:</strong>
+                @Model.Employee?.Client?.CompanyName
+            </p>
+
+            <p>
+                <strong>Examination:</strong>
+                @Model.ExaminationType
+            </p>
+
+            <p>
+                <strong>Date:</strong>
+                @Model.ExaminationDate.ToString("dd MMMM yyyy")
+            </p>
+
+            <p>
+                <strong>Fitness Status:</strong>
+                @Model.FitnessStatus
+            </p>
+
+            <form asp-action="Delete"
+                  asp-route-id="@Model.ExaminationId"
+                  method="post">
+
+                <a asp-action="Index"
+                   class="btn btn-outline-secondary">
+                    Cancel
+                </a>
+
+                <button type="submit"
+                        class="btn btn-danger">
+                    Delete Examination
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>

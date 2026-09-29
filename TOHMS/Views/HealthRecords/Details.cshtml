@@ -1,0 +1,80 @@
+﻿@model TOHMS.Models.HealthRecord
+
+@{
+    ViewData["Title"] = "Health Record Details";
+}
+
+<div class="container mt-4">
+
+    <div class="card shadow-sm">
+
+        <div class="card-header bg-white">
+            <h3>Health Record Details</h3>
+        </div>
+
+        <div class="card-body">
+
+            <dl class="row">
+
+                <dt class="col-md-3">Employee</dt>
+                <dd class="col-md-9">
+                    @Model.Employee?.FirstName
+                    @Model.Employee?.LastName
+                </dd>
+
+                <dt class="col-md-3">Employee Number</dt>
+                <dd class="col-md-9">
+                    @Model.Employee?.EmployeeNumber
+                </dd>
+
+                <dt class="col-md-3">Company</dt>
+                <dd class="col-md-9">
+                    @Model.Employee?.Client?.CompanyName
+                </dd>
+
+                <dt class="col-md-3">Record Date</dt>
+                <dd class="col-md-9">
+                    @Model.RecordDate.ToString("dd MMMM yyyy")
+                </dd>
+
+                <dt class="col-md-3">Record Type</dt>
+                <dd class="col-md-9">
+                    @Model.RecordType
+                </dd>
+
+                <dt class="col-md-3">Clinical Notes</dt>
+                <dd class="col-md-9">
+                    @(string.IsNullOrWhiteSpace(Model.Notes)
+                        ? "No notes recorded."
+                        : Model.Notes)
+                </dd>
+
+                <dt class="col-md-3">Recommendations</dt>
+                <dd class="col-md-9">
+                    @(string.IsNullOrWhiteSpace(Model.Recommendations)
+                        ? "No recommendations recorded."
+                        : Model.Recommendations)
+                </dd>
+
+            </dl>
+
+        </div>
+
+        <div class="card-footer bg-white">
+
+            <a asp-action="Index"
+               class="btn btn-outline-secondary">
+                Back
+            </a>
+
+            <a asp-action="Edit"
+               asp-route-id="@Model.HealthRecordId"
+               class="btn btn-primary">
+                Edit
+            </a>
+
+        </div>
+
+    </div>
+
+</div>

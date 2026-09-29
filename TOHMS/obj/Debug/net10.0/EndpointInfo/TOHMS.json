@@ -1,0 +1,744 @@
+{
+  "openapi": "3.0.4",
+  "info": {
+    "title": "TOHMS",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/clients": {
+      "get": {
+        "tags": [
+          "ClientsApi"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Client"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Client"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Client"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "ClientsApi"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Client"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Client"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Client"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Client"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Client"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Client"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/clients/{id}": {
+      "get": {
+        "tags": [
+          "ClientsApi"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Client"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Client"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Client"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "ClientsApi"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Client"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Client"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Client"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "ClientsApi"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Appointment": {
+        "required": [
+          "appointmentType"
+        ],
+        "type": "object",
+        "properties": {
+          "appointmentId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "employeeId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "appointmentType": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string"
+          },
+          "appointmentDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "status": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "notes": {
+            "maxLength": 500,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "employee": {
+            "$ref": "#/components/schemas/Employee"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Certificate": {
+        "required": [
+          "certificateNumber",
+          "certificateType"
+        ],
+        "type": "object",
+        "properties": {
+          "certificateId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "employeeId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "certificateNumber": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string"
+          },
+          "certificateType": {
+            "maxLength": 150,
+            "minLength": 0,
+            "type": "string"
+          },
+          "issueDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "expiryDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "status": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "employee": {
+            "$ref": "#/components/schemas/Employee"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Client": {
+        "required": [
+          "companyName"
+        ],
+        "type": "object",
+        "properties": {
+          "clientId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "companyName": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": "string"
+          },
+          "contactPerson": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "phoneNumber": {
+            "maxLength": 30,
+            "minLength": 0,
+            "type": "string",
+            "format": "tel",
+            "nullable": true
+          },
+          "email": {
+            "maxLength": 150,
+            "minLength": 0,
+            "type": "string",
+            "format": "email",
+            "nullable": true
+          },
+          "address": {
+            "maxLength": 300,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "industry": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "isActive": {
+            "type": "boolean"
+          },
+          "createdDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "employees": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Employee"
+            },
+            "nullable": true
+          },
+          "risks": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Risk"
+            },
+            "nullable": true
+          },
+          "invoices": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Invoice"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Employee": {
+        "required": [
+          "employeeNumber",
+          "firstName",
+          "lastName"
+        ],
+        "type": "object",
+        "properties": {
+          "employeeId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "clientId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "employeeNumber": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string"
+          },
+          "firstName": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string"
+          },
+          "lastName": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string"
+          },
+          "idNumber": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "jobTitle": {
+            "maxLength": 150,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "department": {
+            "maxLength": 150,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "phoneNumber": {
+            "maxLength": 30,
+            "minLength": 0,
+            "type": "string",
+            "format": "tel",
+            "nullable": true
+          },
+          "email": {
+            "maxLength": 150,
+            "minLength": 0,
+            "type": "string",
+            "format": "email",
+            "nullable": true
+          },
+          "dateOfBirth": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "employmentDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "isActive": {
+            "type": "boolean"
+          },
+          "createdDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "client": {
+            "$ref": "#/components/schemas/Client"
+          },
+          "appointments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Appointment"
+            },
+            "nullable": true
+          },
+          "examinations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Examination"
+            },
+            "nullable": true
+          },
+          "healthRecords": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/HealthRecord"
+            },
+            "nullable": true
+          },
+          "certificates": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Certificate"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Examination": {
+        "required": [
+          "examinationType"
+        ],
+        "type": "object",
+        "properties": {
+          "examinationId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "employeeId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "examinationType": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string"
+          },
+          "examinationDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "fitnessStatus": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "findings": {
+            "maxLength": 1000,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "recommendations": {
+            "maxLength": 1000,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "employee": {
+            "$ref": "#/components/schemas/Employee"
+          }
+        },
+        "additionalProperties": false
+      },
+      "HealthRecord": {
+        "type": "object",
+        "properties": {
+          "healthRecordId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "employeeId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "recordDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "recordType": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "notes": {
+            "maxLength": 2000,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "recommendations": {
+            "maxLength": 1000,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "employee": {
+            "$ref": "#/components/schemas/Employee"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Invoice": {
+        "required": [
+          "invoiceNumber"
+        ],
+        "type": "object",
+        "properties": {
+          "invoiceId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "clientId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "invoiceNumber": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string"
+          },
+          "invoiceDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "dueDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "status": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "totalAmount": {
+            "type": "number",
+            "format": "double"
+          },
+          "client": {
+            "$ref": "#/components/schemas/Client"
+          },
+          "invoiceItems": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/InvoiceItem"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "InvoiceItem": {
+        "type": "object",
+        "properties": {
+          "invoiceItemId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "invoiceId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "serviceId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "quantity": {
+            "maximum": 100000,
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32"
+          },
+          "unitPrice": {
+            "type": "number",
+            "format": "double"
+          },
+          "totalPrice": {
+            "type": "number",
+            "format": "double"
+          },
+          "invoice": {
+            "$ref": "#/components/schemas/Invoice"
+          },
+          "service": {
+            "$ref": "#/components/schemas/Service"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Risk": {
+        "required": [
+          "hazard"
+        ],
+        "type": "object",
+        "properties": {
+          "riskId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "clientId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "hazard": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": "string"
+          },
+          "description": {
+            "maxLength": 1000,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "riskLevel": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "controlMeasures": {
+            "maxLength": 1000,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "assessmentDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "isActive": {
+            "type": "boolean"
+          },
+          "client": {
+            "$ref": "#/components/schemas/Client"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Service": {
+        "required": [
+          "serviceName"
+        ],
+        "type": "object",
+        "properties": {
+          "serviceId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "serviceName": {
+            "maxLength": 150,
+            "minLength": 0,
+            "type": "string"
+          },
+          "description": {
+            "maxLength": 500,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "price": {
+            "maximum": 100000000,
+            "minimum": 0,
+            "type": "number",
+            "format": "double"
+          },
+          "isActive": {
+            "type": "boolean"
+          },
+          "invoiceItems": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/InvoiceItem"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "ClientsApi"
+    }
+  ]
+}

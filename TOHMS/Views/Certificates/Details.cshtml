@@ -1,0 +1,72 @@
+﻿@model TOHMS.Models.Certificate
+
+@{
+    ViewData["Title"] = "Certificate Details";
+}
+
+<div class="container mt-4">
+
+    <div class="card shadow-sm">
+
+        <div class="card-header bg-white">
+            <h3>Certificate Details</h3>
+        </div>
+
+        <div class="card-body">
+
+            <dl class="row">
+
+                <dt class="col-md-3">Certificate Number</dt>
+                <dd class="col-md-9">@Model.CertificateNumber</dd>
+
+                <dt class="col-md-3">Employee</dt>
+                <dd class="col-md-9">
+                    @Model.Employee?.FirstName
+                    @Model.Employee?.LastName
+                </dd>
+
+                <dt class="col-md-3">Company</dt>
+                <dd class="col-md-9">
+                    @Model.Employee?.Client?.CompanyName
+                </dd>
+
+                <dt class="col-md-3">Certificate Type</dt>
+                <dd class="col-md-9">@Model.CertificateType</dd>
+
+                <dt class="col-md-3">Issue Date</dt>
+                <dd class="col-md-9">
+                    @Model.IssueDate.ToString("dd MMMM yyyy")
+                </dd>
+
+                <dt class="col-md-3">Expiry Date</dt>
+                <dd class="col-md-9">
+                    @(Model.ExpiryDate.HasValue
+                        ? Model.ExpiryDate.Value.ToString("dd MMMM yyyy")
+                        : "No expiry date")
+                </dd>
+
+                <dt class="col-md-3">Status</dt>
+                <dd class="col-md-9">@Model.Status</dd>
+
+            </dl>
+
+        </div>
+
+        <div class="card-footer bg-white">
+
+            <a asp-action="Index"
+               class="btn btn-outline-secondary">
+                Back
+            </a>
+
+            <a asp-action="Edit"
+               asp-route-id="@Model.CertificateId"
+               class="btn btn-primary">
+                Edit
+            </a>
+
+        </div>
+
+    </div>
+
+</div>

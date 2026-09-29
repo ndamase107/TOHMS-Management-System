@@ -1,0 +1,55 @@
+﻿@model TOHMS.Models.Service
+
+@{
+    ViewData["Title"] = "Service Details";
+}
+
+<div class="container mt-4">
+
+    <div class="card shadow-sm">
+
+        <div class="card-header bg-white">
+            <h3>Service Details</h3>
+        </div>
+
+        <div class="card-body">
+
+            <dl class="row">
+
+                <dt class="col-md-3">Service</dt>
+                <dd class="col-md-9">@Model.ServiceName</dd>
+
+                <dt class="col-md-3">Description</dt>
+                <dd class="col-md-9">@Model.Description</dd>
+
+                <dt class="col-md-3">Price</dt>
+                <dd class="col-md-9">
+                    R @Model.Price.ToString("N2")
+                </dd>
+
+                <dt class="col-md-3">Status</dt>
+                <dd class="col-md-9">
+                    @(Model.IsActive ? "Active" : "Inactive")
+                </dd>
+
+            </dl>
+
+        </div>
+
+        <div class="card-footer bg-white">
+
+            <a asp-action="Index"
+               class="btn btn-outline-secondary">
+                Back
+            </a>
+
+            <a asp-action="Edit"
+               asp-route-id="@Model.ServiceId"
+               class="btn btn-primary">
+                Edit
+            </a>
+
+        </div>
+
+    </div>
+</div>
